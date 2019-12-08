@@ -4,11 +4,10 @@ import { Injectable } from '@nestjs/common';
 export class LoginService {
     getUserInfo() {
         console.log("im a user@@")
-    )
+    }
 
-    getsUserList(
+    getsUserList() {
         console.log("getUSerList!!")
-    )
     }
 
     getUserCount() {
