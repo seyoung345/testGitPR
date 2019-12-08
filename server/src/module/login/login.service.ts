@@ -2,11 +2,16 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class LoginService {
-    getUserInfo(
+    getUserInfo() {
         console.log("im a user@@")
     )
 
     getsUserList(
         console.log("getUSerList!!")
     )
+    }
+
+    getUserCount() {
+        console.log("im get user count")
+    }
 }
