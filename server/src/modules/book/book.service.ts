@@ -1,5 +1,5 @@
 import { Injectable, HttpException } from '@nestjs/common'
-import { BOOKS } from '../../mocks/books.mock'
+import { BOOKS } from '../../mocks/book.mock'
 
 @Injectable()
 export class BookService {
@@ -12,13 +12,14 @@ export class BookService {
   }
   /** 책 한권 가져오기 **/
   getBook(bookID): Promise<any> {
-    let id = Number(bookID)
+    const id = Number(bookID)
     return new Promise(resolve => {
+      // tslint:disable-next-line:no-shadowed-variable
       const book = this.books.find(book => book.id === id)
-        if (!book) {
+      if (!book) {
           throw new HttpException('Book does not exist!', 404)
         }
-        resolve(book)
+      resolve(book)
     })
   }
   /** 책 추가 **/
@@ -30,9 +31,9 @@ export class BookService {
   }
   /** 책 삭제 **/
   deleteBook(bookID): Promise<any> {
-    let id = Number(bookID);
+    const id = Number(bookID)
     return new Promise(resolve => {
-      let index = this.books.findIndex(book => book.id === id);
+      const index = this.books.findIndex(book => book.id === id)
       if (index === -1) {
         throw new HttpException('Book does not exist!', 404)
       }

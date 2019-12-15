@@ -1,4 +1,4 @@
-export interface IReqestList {
+export interface Ibook {
   id: number
   title: string
   description: string
